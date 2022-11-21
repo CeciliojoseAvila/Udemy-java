@@ -235,3 +235,146 @@ public class Sumar {
     
 }
 
+//package com.mycompany.forcontinue;
+
+/**
+ *
+ * @author GERMAN
+ */
+public class ForContinue {
+    public static void main(String[] args) {
+        
+       for(int i= 0; i<=10; i++){                     
+           System.out.println("El valor de i: "+ i);             
+           if(i==5){
+               System.out.println("saltar a la sgte ejecucion");
+               //break
+               continue;
+           }
+           System.out.println("NO ME EJECUTARÉ EN 5");
+    }
+}
+}
+
+///public class Array {
+    public static void main(String[] args) {
+        
+     String nombres [];
+     nombres = new String[3];
+     
+     nombres[0] = "Cecilio";
+     nombres[1] = "Jose";
+     nombres[2] = "Avila";
+     
+        System.out.println(nombres[0]);
+        nombres[1]="Mario"; //para cambiar datos
+        System.out.println(nombres[1]);
+        System.out.println(nombres.length);//muestra la longitud del arreglo
+       
+       int[] array1 = {1,2,3,4,5};
+       String[] array2= {"Cecilio","Jose","Avila","Ramos"};
+        System.out.println(array1[1]);//devuelve el 2
+        
+        System.out.println(array2[0]);
+        //para llamar todo el arreglo
+        String[] nombres2= {"Cecilio ","Jose ","Avila ","Ramos "," Estudiante \n"};
+        int i= 0;
+        while(i < nombres2.length){
+            System.out.print(nombres2[i]);
+            i++;
+        }
+        //ahora lo mismo con for
+        String[] nombre= {"Cecilio ","Jose ","Avila ","Ramos "," Estudiante \n"};
+        int c=0;
+        /*for(int c = 0; c < nombre.length; c++){
+            System.out.println(nombre[c]);
+        }*/
+        //forEtch, hace lo mismo que el for y el while, pero mas corto
+        for(String dato : nombre){
+            System.out.println(dato);
+        }
+    }
+}
+
+
+///package com.mycompany.forcontinue;
+
+/**
+ *
+ * @author GERMAN
+ */
+public class ForContinue {
+    public static void main(String[] args) {
+        
+       for(int i= 0; i<=10; i++){                     
+           System.out.println("El valor de i: "+ i);             
+           if(i==5){
+               System.out.println("saltar a la sgte ejecucion");
+               //break
+               continue;
+           }
+           System.out.println("NO ME EJECUTARÉ EN 5");
+    }
+}
+}
+
+///public class arrayBidimension {
+    public static void main(String[] args) {
+      //  int[][] x = new int[2][3]; 
+        
+     /*   x[0][0] = 1;
+        x[0][1] = 2;
+        x[0][2] = 3;
+        
+        x[1][0] = 4;
+        x[1][1] = 5;
+        x[1][2] = 6; */
+     //lo sgte es lo mismo que x [][], pero tridimensional ahora
+      int[][][] x= {
+          {
+              {1,2,3},
+              {4,5,6},
+          },
+          {
+              {-1,-2,-3},
+              {-4,-5,-6},
+          },
+      };
+        /*for(int[] matrizInterna: x ){
+        for(int dato: matrizInterna){
+            System.out.print(dato );
+        }*/ 
+        for(int[][] matriz2D: x ){
+            for(int []matriz1D: matriz2D){
+                for (int dato : matriz1D) {
+                    System.out.println(dato);
+                }
+            }
+        /*for(int dato: matrizInterna){
+            System.out.print(dato );
+        }*/
+        }
+        
+    }
+}
+
+///
+public class funciones {
+    public static void main(String[] args) {
+        //saludar();
+        sumar(20, 20);
+        saludar("YOCELIS AVILA", 11);
+        // var nombre "Yocelis";
+        //var edad = 11;
+    }
+    //la funcion static void se ejecuta, pero se debe declarar dentro del Metodo main
+    static  void sumar(int a, int b){ //los int a y b son parámetros
+    int suma=a+b;
+        System.out.println("LA SUMA ES: "+ suma);
+    }
+    static void saludar( String nombre, int edad){
+        System.out.printf("HOLA %s tu edad es %d \n",nombre, edad );//los args van asi: "hola" 
+    }
+}
+
+
