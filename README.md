@@ -377,4 +377,93 @@ public class funciones {
     }
 }
 
+//
+public class Factorial {
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println(factorial(5));
+    }
+    static int factorial(int numero){
+        if (numero > 1) {
+            numero = numero * factorial( numero - 1);
+        }
+        return numero;
+    }
+}
+
+//
+public class funcRecursiva {
+    public static void main(String[] args) {
+        cuentaRegresiva(10);
+    }
+    static void cuentaRegresiva(int numero){
+    numero --;
+    
+        if (numero > 0) {
+            System.out.println(numero);
+            cuentaRegresiva(numero);
+        }else{
+            System.out.println("Llego hasta 0 ");
+        }
+    }
+ 
+}
+
+////para numeros infinitos(TODAS LAS OPERACIONES Y STRING)
+public class varArgs {
+    public static void main(String[] args) {
+        System.out.println(sumar("CECILIO ",5,5,6,6, 12,120));
+    }
+    static int sumar(String nombre, int ... numeros){
+        System.out.print("LA SUMA DE " + nombre + "ES: ");
+        int suma = 0;
+        for(int num : numeros){
+        suma += num;
+        }
+    return suma;
+    }
+}
+
+////para numeros infinitos(TODAS LAS OPERACIONES Y STRING y doubles)
+public class varArgs {
+    public static void main(String[] args) {
+        System.out.println(sumar("CECILIO ",5,5,6,6, 12,120));
+       System.out.println(sumar(4.5,5.0,3.9,4.7,4.5,4.1));
+    }
+    static int sumar(String nombre, int ... numeros){
+        System.out.print("LA SUMA DE " + nombre + "ES: ");
+        int suma = 0;
+        for(int num : numeros){
+        suma += num;
+        }
+    return suma;
+    }
+     static double sumar(double ... numeros){
+        double suma = 0;
+        for(double num : numeros){
+        suma += num;
+        }
+    return suma;
+}
+}
+
+//package clasemath;
+
+public class ClaseMath {
+  
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println(Math.PI);
+        System.out.println(Math.E);
+        System.out.println(Math.pow(3,3));
+        
+        System.out.println(Math.random());        
+      //  var numerosRandom = Math.random()*101; //devuelve double
+      int numerosRandom = (int)(Math.random()*101);//devuelve enteros
+        System.out.println(numerosRandom);//devuelve enteros
+    }    
+}
