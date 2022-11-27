@@ -467,3 +467,65 @@ public class ClaseMath {
         System.out.println(numerosRandom);//devuelve enteros
     }    
 }
+
+///
+package clasemath;
+
+public class ClaseMath {
+  
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println(Math.PI);
+        System.out.println(Math.E);
+        System.out.println(Math.pow(3,3));
+        
+        System.out.println(Math.random());        
+      //  var numerosRandom = Math.random()*101; //devuelve double
+      int numerosRandom = (int)(Math.random()*101);//devuelve enteros
+        System.out.println(numerosRandom);//devuelve enteros
+        
+         System.out.println(Math.sqrt(64));
+         System.out.println(Math.max(15, 25));
+         System.out.println(Math.min(15, 25));
+         System.out.println(Math.round(25.8777));//redondear numeros
+         
+         double moneda= (double)Math.round(3.4389 * 100d)/100; //para trabajar con monedas
+         System.out.println(moneda);        
+         
+    }    
+}
+
+///
+
+
+public class ClaseString {
+    public static void main(String[] args) {
+        String nombre = "Cecilio";
+        System.out.println(nombre.charAt(3));
+        System.out.println(nombre.length());
+        
+        for(int i=0; i < nombre.length(); i++){
+            System.out.println(nombre.charAt(i));
+        }
+        System.out.println(nombre.substring(0, 6));
+        System.out.println(nombre.toLowerCase());//convierte en minuscula
+        System.out.println(nombre.toUpperCase());//convierte en mayusculas
+        
+        nombre="C E C I L I O";
+        System.out.println(nombre.replace(" ", "-"));//reemplaza
+        System.out.println(nombre.replace(" ", ""));
+        
+        System.out.println("Hola".equals("hola"));//false
+        System.out.println("Hola".equals("Hola"));//true
+        
+        //String Builder/ es un constructor
+        StringBuilder nuevo= new StringBuilder();
+        System.out.println(nuevo);
+        
+        nuevo.append("HOLA ");
+        nuevo.append("MUNDO");
+        System.out.println(nuevo.toString());
+    }
+}
+
+//
