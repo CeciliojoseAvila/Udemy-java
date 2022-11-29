@@ -529,3 +529,81 @@ public class ClaseString {
 }
 
 //
+
+package primaridad;
+
+import java.util.Scanner;
+
+public class Primaridad {
+   
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        
+        System.out.println("Ingrese un numero: ");
+        int numero = leer.nextInt();
+        
+        if (esPrimo(numero)) {
+            System.out.println("============");
+            System.out.println("Es numero primo");            
+            System.out.println("============");
+        }else{            
+            System.out.println("============");
+            System.out.println("No es un numero primo");            
+            System.out.println("============");
+        }
+    }
+    static boolean esPrimo(int numero){
+    int contador= 0;
+    
+    int[] numeros = new int[numero];
+    for(int i=0; i<numeros.length; i++){
+    numeros[i]= i+1;
+    }
+    for(int i: numeros){
+        if(i == 1 || i == numero){
+        continue;
+        }
+        if(numero % i == 0){
+        contador++;
+        }
+    }
+    return contador == 0;
+    }
+}
+
+///
+package espalindromo;
+
+import java.util.Scanner;
+
+public class Espalindromo {
+   
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese una palabra: ");
+        
+        String cadena = leer.nextLine();
+        
+        if (esPalindromo(cadena)) {
+            System.out.println("==============");
+            System.out.println("Es palindromo");
+            System.out.println("===============");
+        }else{
+             System.out.println("===============");
+            System.out.println("No es palindromo");
+            System.out.println("=================");
+        }
+    }
+    static boolean esPalindromo(String cadena){
+        
+        cadena = cadena.replace(" ", "");
+        cadena = cadena.toLowerCase();
+        
+        StringBuilder cadenaInvertida = new StringBuilder();
+        
+        for(int i = cadena.length()-1; i >= 0; i--){
+            cadenaInvertida.append(cadena.charAt(i));
+        }
+    return cadena.equals(cadenaInvertida.toString());
+    }
+}
