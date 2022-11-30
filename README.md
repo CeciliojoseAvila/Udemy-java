@@ -607,3 +607,71 @@ public class Espalindromo {
     return cadena.equals(cadenaInvertida.toString());
     }
 }
+
+///
+package generarpassword;
+
+public class GenerarPassword {
+    
+    public static void main(String[] args) {
+        System.out.println(generaContrasena());
+    }
+    static String generaContrasena(){
+    char[] mayusculas = {'A','B','C','D','E','F','G'};
+    char[] minusculas = {'a','b','c','d','e','f','g'};
+    char[] numeros = {'1','2','3','4','5','6','7','8','9','0'};
+    
+    StringBuilder caracteres = new StringBuilder();
+    caracteres.append(mayusculas);
+    caracteres.append(minusculas);
+    caracteres.append(numeros);
+    
+    StringBuilder contrasena = new StringBuilder();
+    
+    for(int i=0; i<= 15; i++){
+    int cantidadCaracteres = caracteres.length();
+    int numeroRandom = (int)(Math.random()*cantidadCaracteres);
+    
+    contrasena.append((caracteres.toString()).charAt(numeroRandom));
+    }
+    
+    return contrasena.toString();
+    }
+}
+
+///
+package conversor;
+
+import java.util.Scanner;
+
+public class Conversor {
+
+    public static void main(String[] args) {
+        while(true){
+            System.out.println("CONVERSOR DE MONEDAS");
+            System.out.println("1 - Soles peruanos a dolares\n"
+                    +"2 - Pesos Mexicanos a dolares \n"
+                    +"3 - Pesos Colombianos a dolares\n"
+                    +"4 - Salir" );
+            System.out.println("INGRESE UNA OPCION: ");
+            
+            Scanner leer = new Scanner(System.in);
+            char opcion = leer.next().charAt(0);
+        }
+    }
+    static void convertir(double valorDolar, String pais){
+        Scanner leer= new Scanner(System.in);
+        System.out.printf("Ingrese la cantidad de %s : ", pais);
+        double cantidadMoneda = leer.nextDouble();
+        
+        double dolares = cantidadMoneda / valorDolar;
+        dolares = (double) Math.round(dolares * 100d)/100;
+        
+        System.out.println("------------------------------");
+        System.out.println("|   Tienes &"+dolares+"Dolares   |");
+        System.out.println("------------------------------");
+    }
+    
+}
+
+////
