@@ -675,3 +675,103 @@ public class Conversor {
 }
 
 ////
+package conversor;
+
+import java.util.Scanner;
+
+public class Conversor {
+
+    public static void main(String[] args) {
+        
+        EXTERNA:
+        while(true){
+            System.out.println("CONVERSOR DE MONEDAS");
+            System.out.println("1 - Soles peruanos a dolares\n"
+                    +"2 - Pesos Mexicanos a dolares \n"
+                    +"3 - Pesos Colombianos a dolares\n"
+                    +"4 - Salir" );
+            System.out.println("INGRESE UNA OPCION: ");
+            
+            Scanner leer = new Scanner(System.in);
+            char opcion = leer.next().charAt(0);
+            
+            switch (opcion) {
+                case '1':
+                    convertir(3.58, "Soles Peruanos");
+                    break;
+                    case '2':
+                    convertir(22.15, "Pesos Mexicanos");
+                    break;
+                    case '3':
+                    convertir(3851.90, "Pesos Colombianos");
+                    break;
+                case '4':
+                    System.out.println("CERRANDO PROGRAMA");
+                    break EXTERNA;
+                    
+                    default:
+                        System.out.println("OPCION INCORRECTA");
+                        break;
+            }            
+        }
+    }
+    static void convertir(double valorDolar, String pais){
+        Scanner leer= new Scanner(System.in);
+        System.out.printf("Ingrese la cantidad de %s : ", pais);
+        double cantidadMoneda = leer.nextDouble();
+        
+        double dolares = cantidadMoneda / valorDolar;
+        dolares = (double) Math.round(dolares * 100d)/100;
+        
+        System.out.println("------------------------------");
+        System.out.println("|   Tienes &"+dolares+" Dolares   |");
+        System.out.println("------------------------------");
+    }
+    
+}
+
+///
+package juego;
+
+import java.util.Scanner;
+
+public class Juego {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        jugar(5);
+    }
+    static void jugar(int vidas){
+    int numeroRandom = (int)(Math.random()*101);
+    int numeroElegido= -1;
+    
+        Scanner leer = new Scanner(System.in);
+        
+        while (numeroElegido != numeroRandom){            
+            System.out.print("Ingrese un numero entre 1 y 100: ");
+            numeroElegido = leer.nextInt();
+            
+            if (numeroRandom < numeroElegido) {
+                System.out.println("El numero es mas pequeño");
+                vidas--;
+            }else if (numeroRandom > numeroElegido) {
+                System.out.println("El numero es mas grande");
+                vidas--;
+            }
+            if (vidas == 0){
+                System.out.println("------------------");
+                System.out.println("|   GAME OVER    |");
+                System.out.println("------------------");
+            }
+            System.out.println("----------------------");
+            System.out.printf("|  Te quedan %d vidas  |\n", vidas);
+            System.out.println("-----------------------");
+        }
+        if (numeroElegido == numeroRandom) {
+            System.out.println("--------------------------");
+            System.out.println("|   FELICIDADES GANASTE   |");
+            System.out.println("--------------------------");
+        }
+    }    
+}
+
