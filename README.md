@@ -902,3 +902,79 @@ public class persona {
         System.out.println("Edad: " + Edad);
     }
 }
+
+//////se ha creado un nuevo paquete llamado clases, donde ingresamos persona. esto para menejar
+// las importaciones 
+//aqui trabajamos las modularizaciones con una clase Main(POO1)
+package poo1;
+// importamos clases "persona.java"
+import clases.persona;
+import clases.calculadora;
+
+public class POO1 {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        /*persona persona1 = new persona();
+        persona1 = new persona(); 
+        persona1.Nombre = "CECILIO";
+        persona1.Edad = 35;         
+        persona1.mostrarDatos();  
+        
+        persona persona2 = new persona();
+        persona2 = new persona();
+        persona2.Nombre = "JOSE MIGUEL";
+        persona2.Edad = 40;        
+        persona2.mostrarDatos(); */
+       
+       
+        //otra clase:
+        System.out.println(calculadora.PI);
+        System.out.println(calculadora.sumar(40, 50));
+        
+        persona persona3 = new persona();
+        persona persona4 = new persona("JOSE ");
+        
+         persona persona5 = new persona();
+         persona5.Nombre = "JOSE AVILA";
+         persona5.Edad = 37;
+         persona5.mostrarDatos();
+        
+    }
+    
+}
+
+//
+package clases;
+
+public class persona {
+    
+    public String Nombre;
+    public int Edad;
+    
+    public persona(){
+        System.out.println("Construyendo el objeto");
+    }
+    public persona(String nombre){
+        System.out.println("Hola " + nombre + "te llamamos desde el constructor");
+    }
+    
+    public void mostrarDatos(){
+    
+        System.out.println("Nombre: " + Nombre);
+        System.out.println("Edad: " + Edad);
+    }
+}
+
+//
+package clases;
+
+public class calculadora {
+    public static double PI = 3.152;
+    
+    public static int sumar(int a, int b){
+        return a + b;
+    }
+}
+
+////
